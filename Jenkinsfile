@@ -9,7 +9,7 @@ pipeline {
         stage('Fetch') {
 	    steps {
 		sh 'git fetch origin'
-		sh 'git pull'
+		sh 'git pull master'
 	    }
 	}
         stage('Build') {
