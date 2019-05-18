@@ -6,11 +6,13 @@ pipeline {
         }
     }
     stages {
+        stage('Fetch') {
+	    steps {
+		sh 'git fetch origin'
+	    }
+	}
         stage('Build') {
             steps {
-                sh 'git fetch origin'
-                sh 'git pull'
-                sh 'ls'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
